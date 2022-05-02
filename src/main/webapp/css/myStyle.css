@@ -1,0 +1,11 @@
+form {display: table;}
+p {display: table-row;}
+label {display: table-cell;}
+input {
+    display: table-cell;
+    margin-bottom: 5px;
+}
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
