@@ -2,8 +2,9 @@ package ru.javawebinar.topjava.web;
 
 import org.slf4j.Logger;
 import ru.javawebinar.topjava.dao.inmemory.InMemory;
-import ru.javawebinar.topjava.dao.inmemory.InMemoryImpl;
+import ru.javawebinar.topjava.dao.inmemory.InMemoryMealsImpl;
 import ru.javawebinar.topjava.model.Meal;
+import ru.javawebinar.topjava.util.MealsUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +27,7 @@ public class MealServlet extends HttpServlet {
 
     public MealServlet() {
         super();
-        inMemory = new InMemoryImpl();
+        inMemory = new InMemoryMealsImpl();
     }
 
     @Override
@@ -44,7 +45,7 @@ public class MealServlet extends HttpServlet {
             int mealId = Integer.parseInt(request.getParameter("mealId"));
             forward = EDIT_MEAL;
             Meal meal = inMemory.getMealById(mealId);
-            request.setAttribute("meal", meal);
+            request.setAttribute("meal", MealsUtil.createTo(meal, false));
         } else if (INSERT.equalsIgnoreCase(action)) {
             forward = EDIT_MEAL;
         } else {

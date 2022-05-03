@@ -14,11 +14,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static ru.javawebinar.topjava.util.MealsUtil.CALORIES_PER_DAY;
 
-public class InMemoryImpl implements InMemory {
+public class InMemoryMealsImpl implements InMemory {
     public static final List<Meal> meals = Collections.synchronizedList(new ArrayList<>());
     private static final AtomicInteger counter = new AtomicInteger();
 
-    public InMemoryImpl() {
+    public InMemoryMealsImpl() {
         addMeal(new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Завтрак", 500));
         addMeal(new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 13, 0), "Обед", 1000));
         addMeal(new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 20, 0), "Ужин", 500));

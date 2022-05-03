@@ -1,7 +1,7 @@
 package ru.javawebinar.topjava;
 
 import ru.javawebinar.topjava.dao.inmemory.InMemory;
-import ru.javawebinar.topjava.dao.inmemory.InMemoryImpl;
+import ru.javawebinar.topjava.dao.inmemory.InMemoryMealsImpl;
 
 
 /**
@@ -12,7 +12,7 @@ public class Main {
     private static final InMemory inMemory;
 
     static {
-        inMemory = new InMemoryImpl();
+        inMemory = new InMemoryMealsImpl();
     }
 
     public static void main(String[] args) {
